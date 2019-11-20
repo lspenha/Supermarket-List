@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TP Web - Lista de compras</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Sofia' >
+    <link rel="stylesheet" href="custom-css/style.css">
+</head>
+
+<body>
+    <header class="">
+        <img class="logo" src="img/supermarket.png" alt="Logo da Pagina">
+        <h1 class="text-center titulo-pagina">Lista De Compras</h1>
+    </header>
+    <main class="container">
+        <section class="row border-bottom">
+            <div class="col">
+                <label class="nome-input" for="nome-produto">Produto<span class="icon">*</span></label>
+                <input type="text" class=" clear form-control" id="nome-produto">
+            </div>
+            <div class="col">
+                <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
+                <input type="number" class="clear money form-control" id="preco-unitario-produto">
+            </div>
+            <div class="col">
+                <label class="nome-input" for="qtd-produto">Quantidade<span class="icon">*</span></label>
+                <input type="number" class=" clear form-control" id="qtd-produto">
+            </div>
+            <div class="col d-flex align-items-end">
+                <button class="btn btn-success" id="add-produto">
+                    <i class="fas fa-plus"></i>
+                    Adcionar
+                </button>
+            </div>
+        </section>
+        <section class="row m-auto card">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr class="row">
+                            <th class="col-7">Nome</th>
+                            <th class="col-2 text-center">Qtd</th>
+                            <th class="col-2">Preço Unitário</th>
+                            <th class="col-1 text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tBody"></tbody>
+                </table>
+            </div>
+        </section>
+        <section class="row d-flex flex-row-reverse">
+            <div class="col-sm-3 p-2 m-2 ">
+                <p>Valor total: <span class="h3">R$</span><span id="valor-total" class="h3">00.00</span></p>
+            </div>
+            <div class="col form-inline">
+                <label for="cupom-desconto">Cupom de desconto: </label>
+                <input type="text" class="form-control col-sm-4 ml-3 mr-1" id="cupom-desconto"
+                    placeholder="Tem algum cupom de desconto?">
+                <button class="btn btn-success"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+    </main>
+    <footer class="">
+        <div class="footer-copyright text-center py-3">© 2019 Copyright: Light Green Enterprise</div>
+    </footer>
+
+    <script src='js/jquery-3.4.1.min.js'></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/addTabela.js"></script>
+
+</body>
+
+</html>
