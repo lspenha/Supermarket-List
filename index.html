@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TP Web - Lista de compras</title>
+    <title>Sofia</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -15,24 +15,26 @@
 
 <body>
     <header class="">
-        <img class="logo" src="img/supermarket.png" alt="Logo da Pagina">
-        <h1 class="text-center titulo-pagina">Lista De Compras</h1>
+        <div class="logo col text-center">
+            <img class="logo img-fluid" src="img/supermarket.png" alt="Logo da Pagina">
+            <h1 class="ml-3 d-inline align-middle titulo-pagina">Sofia</h1>
+        </div>
     </header>
     <main class="container">
         <section class="row border-bottom">
-            <div class="col">
+            <div class="col-12 col-md-3">
                 <label class="nome-input" for="nome-produto">Produto<span class="icon">*</span></label>
                 <input type="text" class=" clear form-control" id="nome-produto">
             </div>
-            <div class="col">
+            <div class="col-12 col-md-3">
                 <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
-                <input type="number" class="clear money form-control" id="preco-unitario-produto">
+                <input type="text" class="clear money form-control" id="preco-unitario-produto">
             </div>
-            <div class="col">
+            <div class="col-6 col-md-3">
                 <label class="nome-input" for="qtd-produto">Quantidade<span class="icon">*</span></label>
                 <input type="number" class=" clear form-control" id="qtd-produto">
             </div>
-            <div class="col d-flex align-items-end">
+            <div class="col-6 col-md-3 d-flex align-items-end">
                 <button class="btn btn-success" id="add-produto">
                     <i class="fas fa-plus"></i>
                     Adcionar
@@ -54,16 +56,16 @@
                 </table>
             </div>
         </section>
-        <section class="row d-flex flex-row-reverse">
-            <div class="col-sm-3 p-2 m-2 ">
-                <p>Valor total: <span class="h3">R$</span><span id="valor-total" class="h3">00.00</span></p>
+        <section class="row">
+                <div class="col form-inline mt-2">
+                        <input type="text" class="form-control col-10 mr-2" id="cupom-desconto"
+                            placeholder="Tem algum cupom de desconto?">
+                        <button class="btn btn-success"><i class="fas fa-search"></i></button>
+                    </div>
+            <div class="col-12 text-center col-sm-3 p-2 m-2">
+                <p><span class="h3">R$</span><span id="valor-total" class="h3">00.00</span></p>
             </div>
-            <div class="col form-inline">
-                <label for="cupom-desconto">Cupom de desconto: </label>
-                <input type="text" class="form-control col-sm-4 ml-3 mr-1" id="cupom-desconto"
-                    placeholder="Tem algum cupom de desconto?">
-                <button class="btn btn-success"><i class="fas fa-search"></i></button>
-            </div>
+            
         </section>
     </main>
     <footer class="">
