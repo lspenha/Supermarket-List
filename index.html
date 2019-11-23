@@ -9,12 +9,12 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Sofia' >
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Sofia'>
     <link rel="stylesheet" href="custom-css/style.css">
 </head>
 
-<body>
-    <header class="">
+<body class="d-flex flex-column justify-content-between">
+    <header>
         <div class="logo col text-center">
             <img class="logo img-fluid" src="img/supermarket.png" alt="Logo da Pagina">
             <h1 class="ml-3 d-inline align-middle titulo-pagina">Sofia</h1>
@@ -24,7 +24,7 @@
         <section class="row border-bottom">
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="nome-produto">Produto<span class="icon">*</span></label>
-                <input type="text" class=" clear form-control" id="nome-produto">
+                <input type="text" class=" clear form-control" id="nome-produto" maxlength="35">
             </div>
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
@@ -37,18 +37,19 @@
             <div class="col-6 col-md-3 d-flex align-items-end">
                 <button class="btn btn-success" id="add-produto">
                     <i class="fas fa-plus"></i>
-                    Adcionar
+                    Adicionar
                 </button>
             </div>
         </section>
-        <section class="row m-auto card">
+        <section class="row m-auto card border border-success">
             <div class="col">
                 <table class="table">
                     <thead>
                         <tr class="row">
-                            <th class="col-7">Nome</th>
+                            <th class="d-none d-md-table-cell col-2">N°</th>
+                            <th class="col-4">Nome</th>
                             <th class="col-2 text-center">Qtd</th>
-                            <th class="col-2">Preço Unitário</th>
+                            <th class="col-4 col-md-3">Preço <span class='d-none d-md-inline'>Unitário</span></th>
                             <th class="col-1 text-center"></th>
                         </tr>
                     </thead>
@@ -57,18 +58,18 @@
             </div>
         </section>
         <section class="row">
-                <div class="col form-inline mt-2">
-                        <input type="text" class="form-control col-10 mr-2" id="cupom-desconto"
-                            placeholder="Tem algum cupom de desconto?">
-                        <button class="btn btn-success"><i class="fas fa-search"></i></button>
-                    </div>
-            <div class="col-12 text-center col-sm-3 p-2 m-2">
-                <p><span class="h3">R$</span><span id="valor-total" class="h3">00.00</span></p>
+            <div class="col form-inline mt-2">
+                <input type="text" class="form-control col-10 mr-2" id="cupom-desconto"
+                    placeholder="Tem algum cupom de desconto?">
+                <button class="btn btn-success"><i class="fas fa-search"></i></button>
             </div>
-            
+            <div class="col-12 text-center col-sm-3 p-2 m-2">
+                <span class="h3">R$</span><span id="valor-total" class="h3">00.00</span>
+            </div>
+
         </section>
     </main>
-    <footer class="">
+    <footer>
         <div class="footer-copyright text-center py-3">© 2019 Copyright: Light Green Enterprise</div>
     </footer>
 

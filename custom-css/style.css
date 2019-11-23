@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
+html, body {
+    height: 100%;
+}
+
+/* MAIN */
+
 .border-bottom {
     margin: 10px 0;
     padding: 20px 0;
@@ -25,9 +31,7 @@ header{
 }
 
 .logo{
-    /* width: 5%; */
     height: 70px;
-    /* position: absolute; */
 }
 
 .nome-input{
@@ -38,7 +42,17 @@ header{
     color: red;
 }
 
+tr:nth-child(even) { background-color: #c3e6cb; }
+
+/* FIM_MAIN */
+
 footer{
     border-top:solid green 2px;
     background-image: url("../img/background-verde.jpg");
+}
+
+@media (max-width: 575px) {
+    .small-sm {
+        font-size: 0.9em;
+    }
 }
