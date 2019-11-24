@@ -63,5 +63,9 @@ function errorMessage(message) {
     return '<span class="text-error text-danger small py-4 py-sm-0 d-block">' + message + '</span>'
 }
 
-$('#precoUnitarioProduto').mask('00.000,00', { reverse: true })
-$('#qtdProduto').mask('000');
+$('#precoUnitarioProduto').mask('00000,00', { reverse: true })
+$('#qtdProduto').mask('000')
+
+function clearInputs() {
+    $(".clear").val("");
+  }
