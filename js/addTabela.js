@@ -2,16 +2,12 @@
 var qtdProdutos = 0;
 
 $(document).ready(function () {
-
-  // $('.money').mask('000.000.000.000.000,00', { reverse: true });
-  $("#add-produto").bind("click", gerarTabela);
-
+  $("#addProduto").bind("click", gerarTabela);
 });
 
 function clear() {
   $(".clear").val("");
 }
-
 
 function valorTotal(qtd, preco) {
   var t = parseFloat($('#valor-total').text());
@@ -20,29 +16,31 @@ function valorTotal(qtd, preco) {
 };
 
 function gerarTabela() {
-  qtdProdutos++;
-  var qtdProduto = $('#qtd-produto').val();
-  var precoU = parseFloat($('#preco-unitario-produto').val()).toFixed(2);
+  if (validar()) {
+    qtdProdutos++;
+    var qtdProduto = $('#qtdProduto').val();
+    var precoU = $('#precoUnitarioProduto').val();
 
-  conteudo = "<tr class='row' id='" + qtdProdutos + "'>" +
-    "<td class='d-none d-md-table-cell col-2'>#"+qtdProduto+"</td>" +
-    "<td class='col-4 small-sm'>" + $('#nome-produto').val() + "</th>" +
-    "<td class='col-2 text-center'>" + qtdProduto + "</th>" +
-    "<td class='col-4 col-md-3 small-sm'>R$ " + precoU + "</th>" +
-    "<td class='col-1 text-center'><button value='" + qtdProdutos + "' class='btn btn-outline-danger btn-sm circle btnExcluir'><i class='fas fa-trash'></i></button></th>" +
-    "</tr>";
+    conteudo = "<tr class='row' id='" + qtdProdutos + "'>" +
+      "<td class='d-none d-md-table-cell col-2'>#" + qtdProdutos + "</td>" +
+      "<td class='col-4 small-sm'>" + $('#nomeProduto').val() + "</th>" +
+      "<td class='col-2 text-center'>" + qtdProduto + "</th>" +
+      "<td class='col-4 col-md-3 small-sm'>R$ " + precoU + "</th>" +
+      "<td class='col-1 text-center'><button value='" + qtdProdutos + "' class='btn btn-outline-danger btn-sm circle btnExcluir'><i class='fas fa-trash'></i></button></th>" +
+      "</tr>";
 
-  $('#tBody').append(conteudo);
-  $('.btnExcluir').click(function () {
-    id = $(this).val()
-    $('tr').each(function () {
-      if ($(this).attr('id') == id) {
-        $(this).remove();
-      }  
+    $('#tBody').append(conteudo);
+    $('.btnExcluir').click(function () {
+      id = $(this).val()
+      $('tr').each(function () {
+        if ($(this).attr('id') == id) {
+          $(this).remove();
+        }
+      })
     })
-  })
-  valorTotal(qtdProduto, precoU);
-  clear();
+    valorTotal(qtdProduto, precoU);
+    clear();
+  }
 }
 
 

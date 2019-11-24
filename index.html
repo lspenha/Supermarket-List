@@ -24,18 +24,21 @@
         <section class="row border-bottom">
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="nome-produto">Produto<span class="icon">*</span></label>
-                <input type="text" class=" clear form-control" id="nome-produto" maxlength="35">
+                <input type="text" class=" clear form-control" id="nomeProduto" maxlength="35">
+                <div class="errorProduto"></div>
             </div>
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
-                <input type="text" class="clear money form-control" id="preco-unitario-produto">
+                <input type="text" class="clear form-control" id="precoUnitarioProduto">
+                <div class="errorPreco"></div>
             </div>
             <div class="col-6 col-md-3">
                 <label class="nome-input" for="qtd-produto">Quantidade<span class="icon">*</span></label>
-                <input type="number" class=" clear form-control" id="qtd-produto">
+                <input type="number" class=" clear form-control" id="qtdProduto">
+                <div class="errorQtd"></div>
             </div>
-            <div class="col-6 col-md-3 d-flex align-items-end">
-                <button class="btn btn-success" id="add-produto">
+            <div class="col-6 col-md-3">
+                <button class="btn btn-success m-custom" id="addProduto">
                     <i class="fas fa-plus"></i>
                     Adicionar
                 </button>
@@ -76,6 +79,7 @@
     <script src='js/jquery-3.4.1.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
+    <script src="js/validacao.js"></script>
     <script src="js/addTabela.js"></script>
 
 </body>
