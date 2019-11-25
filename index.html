@@ -21,27 +21,31 @@
         </div>
     </header>
     <main class="container">
-        <section class="row border-bottom">
+        <div class="row border-bottom">
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="nome-produto">Produto<span class="icon">*</span></label>
-                <input type="text" class=" clear form-control" id="nome-produto" maxlength="35">
+                <input type="text" class=" clear form-control" id="nomeProduto" maxlength="35">
+                <div class="errorProduto"></div>
             </div>
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
-                <input type="text" class="clear money form-control" id="preco-unitario-produto">
+                <input type="text" class="clear form-control" id="precoUnitarioProduto">
+                <div class="errorPreco"></div>
             </div>
             <div class="col-6 col-md-3">
                 <label class="nome-input" for="qtd-produto">Quantidade<span class="icon">*</span></label>
-                <input type="number" class=" clear form-control" id="qtd-produto">
+                <input type="number" class=" clear form-control" id="qtdProduto">
+                <div class="errorQtd"></div>
             </div>
-            <div class="col-6 col-md-3 d-flex align-items-end">
-                <button class="btn btn-success" id="add-produto">
+            <div class="col-6 col-md-3">
+                <button class="btn btn-success m-custom" id="addProduto">
                     <i class="fas fa-plus"></i>
                     Adicionar
                 </button>
+                <button class="btn btn-danger m-custom mx-sm-2" id="limparTudo" disabled>Limpar lista</button>
             </div>
-        </section>
-        <section class="row m-auto card border border-success">
+        </div>
+        <div class="row m-auto card border border-success">
             <div class="col">
                 <table class="table">
                     <thead>
@@ -56,8 +60,8 @@
                     <tbody id="tBody"></tbody>
                 </table>
             </div>
-        </section>
-        <section class="row">
+        </div>
+        <div class="row">
             <div class="col form-inline mt-2">
                 <input type="text" class="form-control col-10 mr-2" id="cupom-desconto"
                     placeholder="Tem algum cupom de desconto?">
@@ -67,7 +71,7 @@
                 <span class="h3">R$</span><span id="valor-total" class="h3">00,00</span>
             </div>
 
-        </section>
+        </div>
     </main>
     <footer>
         <div class="footer-copyright text-center py-3">© 2019 Copyright: Light Green Enterprise</div>
@@ -76,7 +80,8 @@
     <script src='js/jquery-3.4.1.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
-    <script src="js/addTabela.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/produtos.js"></script>
 
 </body>
 
