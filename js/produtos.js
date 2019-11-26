@@ -23,6 +23,8 @@ function addProduto() {
     if (produtos.length > 0) {
       $('#limparTudo').prop('disabled', false);
     }
+
+    calcValorTotal(produtos);
   } else {
     console.log("Não é possível adicionar o produto...");
   }
@@ -39,21 +41,27 @@ function excluirProduto() {
   if (!produtos.length > 0) {
     $('#limparTudo').prop('disabled', true);
   }
+
+  calcValorTotal(produtos);
 }
 
 $("#limparTudo").click(limparLista)
 
 function limparLista() {
   produtos = [];
+  calcValorTotal(produtos);
   $('#tBody').empty();
   $('#limparTudo').prop('disabled', true);
   parseFloat($('#valorTotal').text("00,00"));
 }
 
-function valorTotal(){
-  var vt = parseFloat($('#valorTotal').text());
-  var v = ((vt + $('#qtdProduto').val() * parseFloat($('#precoUnitarioProduto').val())).toFixed(2)).replace('.', ',');
-  $('#valorTotal').text(v); 
+
+function calcValorTotal(produtos) {
+  var vt = 0;
+  produtos.forEach((produto) => {
+    vt += produto.preco * produto.qtd;
+  })
+  $('#valorTotal').text(vt.toFixed(2).replace(".", ","));
 };
 
 
@@ -67,6 +75,7 @@ function gerarTabela(produtos) {
     "<td class='col-1 text-center'><button value='" + produto.id + "' id='excluir" + produto.id + "' class='btn btn-outline-danger btn-sm circle'><i class='fas fa-trash'></i></button></th>" +
     "</tr>";
   $('#tBody').append(newRow);
+
   return produto.id;
 }
 

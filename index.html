@@ -24,18 +24,18 @@
         <div class="row border-bottom">
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="nome-produto">Produto<span class="icon">*</span></label>
-                <input type="text" class=" clear form-control" id="nomeProduto" maxlength="35">
+                <input type="text" class=" clear form-control" id="nomeProduto" maxlength="35" value="Produto 01">
                 <div class="errorProduto"></div>
-            </div>
-            <div class="col-12 col-md-3">
-                <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
-                <input type="text" class="clear form-control" id="precoUnitarioProduto">
-                <div class="errorPreco"></div>
             </div>
             <div class="col-6 col-md-3">
                 <label class="nome-input" for="qtd-produto">Quantidade<span class="icon">*</span></label>
-                <input type="number" class=" clear form-control" id="qtdProduto">
+                <input type="number" class=" clear form-control" id="qtdProduto" value="1">
                 <div class="errorQtd"></div>
+            </div>
+            <div class="col-12 col-md-3">
+                <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
+                <input type="text" class="clear form-control" id="precoUnitarioProduto" value="10,00">
+                <div class="errorPreco"></div>
             </div>
             <div class="col-6 col-md-3">
                 <button class="btn btn-success m-custom" id="addProduto">
@@ -68,9 +68,7 @@
                 <button class="btn btn-success"><i class="fas fa-search"></i></button>
             </div>
             <div class="col-12 text-center col-sm-3 p-2 m-2">
-                <span class="h3 mr-1">Valor Total:</span><span class="h4">R$</span><span id="valorTotal" class="h4">00,00</span>
-            </div>
-
+                <span class="h3">R$</span><span id="valorTotal" class="h3">0,00</span>            </div>
         </div>
     </main>
     <footer>
