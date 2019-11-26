@@ -1,6 +1,9 @@
 var produtos = [];
+var cont = 0;
+var cupom = ["cupom10"];
 
 $("#addProduto").bind("click", addProduto);
+$(".valida-cupom").bind("click", validaCupom);
 
 function addProduto() {
   if (validar()) {
@@ -13,9 +16,10 @@ function addProduto() {
       qtd: $('#qtdProduto').val()
     };
 
-    valorTotal();
     produtos.push(newProduto);
+    cont = cont + 1;
 
+    $('#item').text(cont);
     clearInputs();
     var id = gerarTabela(produtos);
     $("#excluir" + id).bind("click", excluirProduto);
@@ -35,7 +39,9 @@ function excluirProduto() {
 
   var index = produtos.findIndex((element, index) => { if (element.id == id) { return index + 1 } });
   produtos.splice(index, 1);
+  cont = cont - 1;
 
+  $('#item').text(cont);
   $('#produto' + id).remove();
 
   if (!produtos.length > 0) {
@@ -53,6 +59,7 @@ function limparLista() {
   $('#tBody').empty();
   $('#limparTudo').prop('disabled', true);
   parseFloat($('#valorTotal').text("00,00"));
+  $('#item').text(0);
 }
 
 
@@ -77,9 +84,13 @@ function gerarTabela(produtos) {
   $('#tBody').append(newRow);
 
   return produto.id;
-}
+};
 
-
-function subValortotal(){
-
+function validaCupom (){
+  if($('#cupom-desconto').val() == cupom[0]){
+    
+    cupomValidado = parseFloat($('#valorTotal').text()) - (parseFloat($('#valorTotal').text()) * 0.1);
+    $('#valorTotal').text(cupomValidado);
+    clearInputs();    
+  }
 };

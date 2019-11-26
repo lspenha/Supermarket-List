@@ -14,6 +14,23 @@
 </head>
 
 <body class="d-flex flex-column justify-content-between">
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Valor Total Da Sua Lista !</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <span class="h3">R$</span><span id="valorTotal" class="h3">0,00</span></div>
+                <h4 class="m-1">Quanto itens tem sua lista atualmento: <span id="item"> 0</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
     <header>
         <div class="logo col text-center">
             <img class="logo img-fluid" src="img/supermarket.png" alt="Logo da Pagina">
@@ -24,17 +41,17 @@
         <div class="row border-bottom">
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="nome-produto">Produto<span class="icon">*</span></label>
-                <input type="text" class=" clear form-control" id="nomeProduto" maxlength="35" value="Produto 01">
+                <input type="text" class=" clear form-control" id="nomeProduto" maxlength="35">
                 <div class="errorProduto"></div>
             </div>
             <div class="col-6 col-md-3">
                 <label class="nome-input" for="qtd-produto">Quantidade<span class="icon">*</span></label>
-                <input type="number" class=" clear form-control" id="qtdProduto" value="1">
+                <input type="number" class=" clear form-control" id="qtdProduto">
                 <div class="errorQtd"></div>
             </div>
             <div class="col-12 col-md-3">
                 <label class="nome-input" for="preco-unitario-produto">Preço unitário<span class="icon">*</span></label>
-                <input type="text" class="clear form-control" id="precoUnitarioProduto" value="10,00">
+                <input type="text" class="clear form-control" id="precoUnitarioProduto">
                 <div class="errorPreco"></div>
             </div>
             <div class="col-6 col-md-3">
@@ -50,7 +67,7 @@
                 <table class="table">
                     <thead>
                         <tr class="row">
-                            <th class="d-none d-md-table-cell col-2">N°</th>
+                            <th class="d-none d-md-table-cell col-2">ID°</th>
                             <th class="col-4">Nome</th>
                             <th class="col-2 text-center">Qtd</th>
                             <th class="col-4 col-md-3">Preço <span class='d-none d-md-inline'>Unitário</span></th>
@@ -63,25 +80,22 @@
         </div>
         <div class="row">
             <div class="col form-inline mt-2">
-                <input type="text" class="form-control col-10 mr-2" id="cupom-desconto"
-                    placeholder="Tem algum cupom de desconto?">
-                <button class="btn btn-success"><i class="fas fa-search"></i></button>
+                <input type="text" class="clear form-control col-10 mr-2" id="cupom-desconto"
+                    placeholder="Tem algum cupom de desconto? Ex: cupom10">
+                <button class="btn btn-success"><i class="valida-cupom fas fa-search"></i></button>
             </div>
-            <div class="col-12 text-center col-sm-3 p-2 m-2">
-                <span class="h3">R$</span><span id="valorTotal" class="h3">0,00</span>            </div>
+        <div class="col-12 text-center col-sm-3 p-2 m-2">
+            <button type="button" class="btn btn-success" data-toggle="modal"data-target="#exampleModal">Valor Total</button>
         </div>
     </main>
     <footer>
         <div class="footer-copyright text-center py-3">© 2019 Copyright: Light Green Enterprise</div>
     </footer>
-
     <script src='js/jquery-3.4.1.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/validacao.js"></script>
     <script src="js/produtos.js"></script>
-    <script src="js/valorTotal.js"></script>
-
 </body>
 
 </html>
