@@ -13,6 +13,7 @@ function addProduto() {
       qtd: $('#qtdProduto').val()
     };
 
+    valorTotal();
     produtos.push(newProduto);
 
     clearInputs();
@@ -51,7 +52,9 @@ function limparLista() {
   calcValorTotal(produtos);
   $('#tBody').empty();
   $('#limparTudo').prop('disabled', true);
+  parseFloat($('#valorTotal').text("00,00"));
 }
+
 
 function calcValorTotal(produtos) {
   var vt = 0;
@@ -60,6 +63,7 @@ function calcValorTotal(produtos) {
   })
   $('#valorTotal').text(vt.toFixed(2).replace(".", ","));
 };
+
 
 function gerarTabela(produtos) {
   var produto = produtos[(produtos.length - 1)]
@@ -74,3 +78,8 @@ function gerarTabela(produtos) {
 
   return produto.id;
 }
+
+
+function subValortotal(){
+
+};
